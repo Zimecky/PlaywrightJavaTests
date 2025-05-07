@@ -4,14 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f425fcb0-a161-44cc-bd8a-d897512c274d" name="Changes" comment="" />
+    <list default="true" id="f425fcb0-a161-44cc-bd8a-d897512c274d" name="Changes" comment="init repo">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -29,9 +43,100 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="JUnit.AddingItemsToTheCartTest">
+    <configuration name="AddingItemsToTheCartTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-first-playwright-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.playwright.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.playwright" />
+      <option name="MAIN_CLASS_NAME" value="com.playwright.AddingItemsToTheCartTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimplePlaywrightTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-first-playwright-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.playwright.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.playwright" />
+      <option name="MAIN_CLASS_NAME" value="com.playwright.SimplePlaywrightTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimplePlaywrightTest.shouldSearchByKeyword (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-first-playwright-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.playwright.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.playwright" />
+      <option name="MAIN_CLASS_NAME" value="com.playwright.SimplePlaywrightTest" />
+      <option name="METHOD_NAME" value="shouldSearchByKeyword(com.microsoft.playwright.Page)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimplePlaywrightTest.shouldSearchByKeyword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-first-playwright-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.playwright.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.playwright" />
+      <option name="MAIN_CLASS_NAME" value="com.playwright.SimplePlaywrightTest" />
+      <option name="METHOD_NAME" value="shouldSearchByKeyword" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimplePlaywrightTest.shouldShowThePageTitle (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-first-playwright-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.playwright.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.playwright" />
+      <option name="MAIN_CLASS_NAME" value="com.playwright.SimplePlaywrightTest" />
+      <option name="METHOD_NAME" value="shouldShowThePageTitle(com.microsoft.playwright.Page)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AddingItemsToTheCartTest" />
+        <item itemvalue="JUnit.SimplePlaywrightTest" />
+        <item itemvalue="JUnit.SimplePlaywrightTest.shouldShowThePageTitle (1)" />
+        <item itemvalue="JUnit.SimplePlaywrightTest.shouldSearchByKeyword (1)" />
+        <item itemvalue="JUnit.SimplePlaywrightTest.shouldSearchByKeyword" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -41,6 +146,29 @@
       <option name="presentableId" value="Default" />
       <updated>1746391533041</updated>
     </task>
+    <task id="LOCAL-00001" summary="init repo">
+      <created>1746645153019</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746645153019</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="init repo" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/playwright/SimplePlaywrightTest.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
