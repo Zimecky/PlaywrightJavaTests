@@ -1,52 +1,17 @@
 package com.playwright;
 
 import com.microsoft.playwright.*;
-import com.microsoft.playwright.junit.UsePlaywright;
 import com.microsoft.playwright.options.AriaRole;
+import com.playwright.fixtures.PlaywrightTestCase;
+import com.playwright.fixtures.TakesFinalScreenshot;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
-import static com.playwright.ScreenshotManager.takeScreenshot;
 
-
-@UsePlaywright
-public class AddingItemsToTheCartTest {
-    protected  static Playwright playwright;
-    protected static Browser browser;
-    protected  static BrowserContext browserContext;
-
-    public Page page;
-
-    @BeforeAll
-    static void setupBrowser(){
-        playwright = Playwright.create();
-        browser = playwright.chromium().launch(
-                new BrowserType.LaunchOptions().setHeadless(false)
-                        .setArgs(Arrays.asList("--no-sandbox", "--disable-extensions", "--disable-gpu")));
-    playwright.selectors().setTestIdAttribute("data-test");
-    }
-
-    @BeforeEach
-    void setup(){
-        browserContext = browser.newContext();
-        page = browserContext.newPage();
-    }
-
-    @AfterEach
-    void closeContext(){
-        takeScreenshot(page, "End of test");
-        browserContext.close();
-    }
-
-    @AfterAll
-    static void tearDown(){
-        browser.close();
-        playwright.close();
-    }
+public class AddingItemsToTheCartTest extends PlaywrightTestCase implements TakesFinalScreenshot {
 
     @DisplayName("Search for pliers")
     @Test

@@ -1,36 +1,23 @@
 package com.playwright;
 
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.junit.Options;
-import com.microsoft.playwright.junit.OptionsFactory;
-import com.microsoft.playwright.junit.UsePlaywright;
+import com.playwright.fixtures.PlaywrightTestCase;
+import com.playwright.fixtures.TakesFinalScreenshot;
 import org.junit.jupiter.api.*;
 
-import java.util.Arrays;
 
-@UsePlaywright
-public class SimplePlaywrightTest {
-
-    public static class MyOptions implements OptionsFactory{
-        @Override
-        public Options getOptions(){
-            return new Options()
-                    .setHeadless(false)
-                    .setLaunchOptions(new BrowserType.LaunchOptions().setArgs(Arrays.asList("--no-sandbox", "disable-gpu")));
-        }
-
-    }
+public class SimplePlaywrightTest extends PlaywrightTestCase implements TakesFinalScreenshot {
 
     @Test
-    void shouldShowThePageTitle(Page page){
+    @DisplayName("Show page title")
+    void shouldShowThePageTitle(){
         page.navigate("https://practicesoftwaretesting.com");
         String title = page.title();
         Assertions.assertTrue(title.contains("Practice Software Testing"));
     }
 
     @Test
-    void shouldSearchByKeyword(Page page){
+    @DisplayName("Search By Keyword")
+    void shouldSearchByKeyword(){
         page.navigate("https://practicesoftwaretesting.com");
         page.locator("[placeholder=Search]").fill("Pliers");
         page.locator("button:has-text('Search')").click();
