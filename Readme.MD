@@ -9,3 +9,14 @@ Example CSS: page.locator(".btn-primary").click();
 -By XPath (mniej uzywane w playwright)
 -Combining Selectors
 -Advanced Selector Techniques
+<br>
+Technologies Used:
+Playwright
+JUnit 5
+Allure Framework
+<br>
+Automated tests - Local Run 
+Running automated tests through maven locally:
+mvn clean verify
+Test Report will be generated in directory:
+/target/site/allure-maven-plugin/index.html
