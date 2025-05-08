@@ -10,11 +10,11 @@ Example CSS: page.locator(".btn-primary").click();
 -Combining Selectors
 -Advanced Selector Techniques
 ## Technologies Used:
-* Playwright
+* Playwright (https://playwright.dev/)
 * Java
 * Maven
 * JUnit 5
-* Allure Framework
+* Allure Framework (https://allurereport.org/docs/)
 ## Automated tests - Local Run 
 Running automated tests through maven command locally:
 * <code>mvn clean verify</code>
