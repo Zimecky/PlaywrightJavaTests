@@ -12,6 +12,7 @@ Example CSS: page.locator(".btn-primary").click();
 ## Technologies Used:
 Playwright
 Java
+Maven
 JUnit 5
 Allure Framework
 ## Automated tests - Local Run 
