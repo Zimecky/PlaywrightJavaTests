@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+import static com.playwright.ScreenshotManager.takeScreenshot;
 
 
 @UsePlaywright
@@ -37,6 +38,7 @@ public class AddingItemsToTheCartTest {
 
     @AfterEach
     void closeContext(){
+        takeScreenshot(page, "End of test");
         browserContext.close();
     }
 
