@@ -1,4 +1,4 @@
-Overview of locator types in Playwright:
+## Overview of locator types in Playwright:
 -By Role
 -By Text Content
 -By Labels or Placeholders
@@ -9,14 +9,13 @@ Example CSS: page.locator(".btn-primary").click();
 -By XPath (mniej uzywane w playwright)
 -Combining Selectors
 -Advanced Selector Techniques
-<br>
-Technologies Used:
+## Technologies Used:
 Playwright
+Java
 JUnit 5
 Allure Framework
-<br>
-Automated tests - Local Run 
+## Automated tests - Local Run 
 Running automated tests through maven locally:
 mvn clean verify
-Test Report will be generated in directory:
+## Test Report will be generated in directory:
 /target/site/allure-maven-plugin/index.html
