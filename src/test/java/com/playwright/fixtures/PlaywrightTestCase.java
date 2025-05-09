@@ -22,7 +22,7 @@ public abstract class PlaywrightTestCase {
             ThreadLocal.withInitial(() ->
                      playwright.get().chromium().launch(
                              new BrowserType.LaunchOptions()
-                                     .setHeadless(true)
+                                     .setHeadless(false)
                                      .setArgs(Arrays.asList("--no-sandbox", "--disable-extensions", "--disable-gpu"))
                     )
             );
