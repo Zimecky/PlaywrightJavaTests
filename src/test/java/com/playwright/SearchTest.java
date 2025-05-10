@@ -38,16 +38,27 @@ public class SearchTest extends PlaywrightTestCase implements TakesFinalScreensh
         ProductList productList = new ProductList(page);
         ProductDetails productDetails = new ProductDetails(page);
         NavBar navBar = new NavBar(page);
+        CheckoutCart checkoutCart = new CheckoutCart(page);
 
         searchComponent.searchBy("pliers");
-        //productList.viewProductDetails("Combination Pliers");
-        productList.viewProductDetails("Combination Pliers"); // change to other Pliers which are not out of stock
+        productList.viewProductDetails("Combination Pliers");
 
         productDetails.increaseQuantityBy(2);
         productDetails.addToCart();
 
         navBar.openCart();
 
+        List<CartLineItem> lineItems = checkoutCart.getLineItems();
+
+        Assertions.assertThat(lineItems)
+                .hasSize(1)
+                .first()
+                .satisfies(item -> {
+                    Assertions.assertThat(item.title().contains("Combination Pliers"));
+                    Assertions.assertThat(item.quantity()).isEqualTo(2);
+                    Assertions.assertThat(item.total()).isEqualTo(item.quantity() * item.price());
+
+                });
     }
 
     class SearchComponent {
@@ -76,7 +87,7 @@ public class SearchTest extends PlaywrightTestCase implements TakesFinalScreensh
             return page.getByTestId("product-name").allInnerTexts();
         }
 
-        public void viewProductDetails(String productName){
+        public void viewProductDetails(String productName) {
             page.locator(".card").getByText(productName).click();
         }
     }
@@ -112,6 +123,36 @@ public class SearchTest extends PlaywrightTestCase implements TakesFinalScreensh
 
         public void openCart() {
             page.getByTestId("nav-cart").click();
+        }
+    }
+
+    record CartLineItem(String title, int quantity, double price, double total) {
+    }
+
+    class CheckoutCart {
+        private final Page page;
+
+        CheckoutCart(Page page) {
+            this.page = page;
+        }
+
+        public List<CartLineItem> getLineItems() {
+            page.locator("app-cart tbody tr").waitFor();
+            return page.locator("app-cart tbody tr")
+                    .all()
+                    .stream()
+                    .map(row -> {
+                                String title = row.getByTestId("product-title").innerText();
+                                int quantity = Integer.parseInt(row.getByTestId("product-quantity").inputValue());
+                                double price = Double.parseDouble(price(row.getByTestId("product-price").innerText()));
+                                double linePrice = Double.parseDouble(price(row.getByTestId("line-price").innerText()));
+                                return new CartLineItem(title, quantity, price, linePrice);
+                            }
+                    ).toList();
+        }
+
+        private String price(String value) {
+            return value.replace("$", "");
         }
     }
 
