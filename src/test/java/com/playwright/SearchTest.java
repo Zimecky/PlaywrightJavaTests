@@ -12,23 +12,46 @@ import java.util.List;
 
 public class SearchTest extends PlaywrightTestCase implements TakesFinalScreenshot {
 
-    @DisplayName("Without page objects")
+    @DisplayName("With Page Object")
     @Test
-    public void withoutPageObject() {
-        page.navigate("https://practicesoftwaretesting.com");
-        waitForSearchResponse();
-        List<String> matchingProducts = page.getByTestId("product-name").allInnerTexts();
+    void withPageObject() {
+        SearchComponent searchComponent = new SearchComponent(page);
+        ProductList productList = new ProductList(page);
+
+        searchComponent.searchBy("tape");
+
+        var matchingProducts = productList.getProductNames();
+
         Assertions.assertThat(matchingProducts)
                 .contains("Tape Measure 7.5m", "Measuring Tape", "Tape Measure 5m");
     }
 
 
-    private void waitForSearchResponse() {
-        page.waitForResponse("**/products/search?q=tape", () -> {
-            page.getByPlaceholder("Search").fill("tape");
-            page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Search")).click();
-        });
+    class SearchComponent {
+        private final Page page;
+
+        SearchComponent(Page page) {
+            this.page = page;
+        }
+
+        public void searchBy(String keyword) {
+            page.waitForResponse("**/products/search?q=tape", () -> {
+                page.getByPlaceholder("Search").fill(keyword);
+                page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Search")).click();
+            });
+        }
     }
 
+    class ProductList {
+        private final Page page;
+
+        ProductList(Page page) {
+            this.page = page;
+        }
+
+        public List<String> getProductNames() {
+            return page.getByTestId("product-name").allInnerTexts();
+        }
+    }
 
 }
