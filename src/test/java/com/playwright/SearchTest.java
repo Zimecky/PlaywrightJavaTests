@@ -15,6 +15,8 @@ public class SearchTest extends PlaywrightTestCase implements TakesFinalScreensh
     @DisplayName("With Page Object")
     @Test
     void withPageObject() {
+        page.navigate("https://practicesoftwaretesting.com");
+
         SearchComponent searchComponent = new SearchComponent(page);
         ProductList productList = new ProductList(page);
 
